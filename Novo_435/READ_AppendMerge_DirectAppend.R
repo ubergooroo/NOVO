@@ -37,7 +37,6 @@ bio_6yr <- rbind(bio_a, bio_b, bio_c)
 head(bio_6yr)
 
 ##############################################################################################################
-
 # READ NHANES 2007-2008 Demographic Data To Temporary File   
 ins_a <- read.xport("C:/Users/ubergooroo/Downloads/hiq_e.xpt")[,c("SEQN","HIQ031A")]
 
@@ -51,7 +50,7 @@ ins_c <- read.xport("C:/Users/ubergooroo/Downloads/hiq_g.xpt")[,c("SEQN","HIQ031
 ins_6yr <- rbind(ins_a, ins_b, ins_c)
 head(ins_6yr)
 
-
+##############################################################################################################
 # Merge Files Together Two At A Time
 nhanes_0712 <- merge(demo_6yr, bio_6yr, by="SEQN", all=TRUE)
 nhanes_0712 <- merge(nhanes_0712, ins_6yr, by="SEQN", all=TRUE)
@@ -71,3 +70,8 @@ dim(nhanes_0712)
 
 # Save the data to the working directory
 saveRDS(nhanes_0712, "C:/Users/ubergooroo/Documents/GitHub/NOVO/Novo_435/nhanes_data.rds")
+
+# empty workspace
+rm(list=ls())
+# this clears the console
+cat("\014") 
