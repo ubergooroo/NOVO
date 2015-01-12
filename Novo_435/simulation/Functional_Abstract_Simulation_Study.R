@@ -26,6 +26,8 @@ source("meta_data-fun.R")
 
 out<-replicate(4000, {d<-one.sample();c(eb.weighting(d), ipw.weighting(d), 
                                         sipw.weighting(d), meta.data(d))}) # this is to call the functions once they are created.
+saveRDS(out, 'C:\\Users\\ubergooroo\\Documents\\GitHub\\NOVO\\Novo_435\\simulation\\out_rct_103pct.RDS' )
+
 
 i<-0 #here we set where our vector assignment begins. 
 eb_prebalance<-out[(i<-i+1):(i<-i+7),]
@@ -127,6 +129,8 @@ eb_year2_mads<-apply(eb_year2,1,mad)
 
 
 pop.means<-the.population()
+
+saveRDS(pop.means, 'C:\\Users\\ubergooroo\\Documents\\GitHub\\NOVO\\Novo_435\\simulation\\pop.RDS')
 
 eb_final_estimates<-data.frame(eb_bmi_medians, eb_female_medians, 
                                eb_age_medians, eb_year_medians, eb_cost_medians,eb_age2_medians, eb_bmi2_medians, eb_year2_medians )
