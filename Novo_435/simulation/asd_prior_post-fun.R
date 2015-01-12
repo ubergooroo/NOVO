@@ -36,7 +36,7 @@ asd.prior_post<-function(values,values2){
 #   return<-c(asd_priorbal, asd_postbal)
   
   return<-c(asd_priorbal, asd_postbal,as.vector(c(values2[1,2:7], values2[2,2:7], values2[3,2:7], values2[4,2:7] 
-                                                  , values2[5,2:7], values2[6,2:7], values2[7,2:7]) , mode='numeric'))
+                                                  , values2[5,2:7], values2[6,2:7], values2[7,2:7], values2[8,2:7]) , mode='numeric'))
 
 
   

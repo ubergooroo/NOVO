@@ -20,7 +20,7 @@ eb.weighting<-function(sample){
   table(d$GROUP)
   
   # define covariates to be matched on
-  X<-c("YEAR","YEAR2","FEMALE","AGE","AGE2","BMI","BMI2")
+  X<-c("YEAR","YEAR2","FEMALE","AGE","AGE2","BMI","BMI2", "COST")
   
   out<-ebalance(d$GROUP,d[,X])
   #plot(density(out$w),xlim=c(0,0.002))
